@@ -1,0 +1,35 @@
+Difference Between Stored Procedure and Function (SQL)
+
+| Feature          | Function                                         | Procedure                                             |
+|------------------|--------------------------------------------------|--------------------------------------------------------|
+| Purpose          | Used to compute and return a value               | Used to perform a task or series of SQL operations     |
+| Return type      | Must return a single scalar or table value       | Can return nothing, a value, or multiple outputs       |
+| Calls            | Can be used inside SELECT query                  | Cannot be used inside SELECT queries                   |
+| Use in Join      | Can be used in joins                             | Cannot be used in joins                                |
+| Transactions     | Cannot manage transactions                       | Can manage transactions (BEGIN, COMMIT, ROLLBACK)      |
+| Error handling   | Limited support                                  | Full support                                            |
+| Output parameters| Not allowed                                      | Fully supported                                        |
+| Invocation       | Called using SELECT dbo.MyFunction(...)          | Called using EXEC or EXECUTE                           |
+
+Additional Differences:
+
+1. **Compilation**:
+   - Function is compiled every time it is used.
+   - Procedure is compiled only once when created.
+
+2. **DML Operations**:
+   - Function cannot perform INSERT, UPDATE, DELETE on tables (except for table-valued functions).
+   - Procedure can perform all DML operations.
+
+3. **Side Effects**:
+   - Function should not cause any side effects like updating data.
+   - Procedure is meant to perform actions and can have side effects.
+
+4. **Return Statement**:
+   - Function must have a RETURN statement.
+   - Procedure can have RETURN, but it's optional and mainly used for status codes.
+
+5. **Execution Plan**:
+   - Functions can sometimes cause performance issues inside SELECTs.
+   - Procedures are optimized for batch execution.
+
