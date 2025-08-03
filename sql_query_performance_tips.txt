@@ -1,0 +1,19 @@
+Day 14
+* How can performance of a SQL Query be improved?
+
+1. Indexing
+2. Avoid selecting * (select only required columns)
+3. Always use where clause to filter rows early
+4. Use joins appropriately, avoid unnecessary joins
+5. Always go with inner joins as compared to left join
+6. Create and use indexed views (materialized views)
+7. Use EXISTS instead of IN for subqueries (very efficient for large data-sets)
+8. Use appropriate data types ex varchar(10) for phone num
+9. Enable query caching
+10. Query execution plan (SSMS -> CTRL + M)
+
+Performance: Faster response time and throughput
+Storage: Efficient use of disk and memory
+Scalability : Ability to handle increasing amounts of data or users without performance degradation
+Maintainability: Easier to debug, optimize, and extend queries or database design
+Cost: Reduced resource usage (CPU, memory, storage) leads to lower operational costs, especially on cloud services
