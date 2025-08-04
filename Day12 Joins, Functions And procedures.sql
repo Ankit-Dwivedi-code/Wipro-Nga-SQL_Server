@@ -195,4 +195,13 @@ return
 
   -- Using funct in procedure
 
-create procedure PrintEmployeeJoiningYear@EmpID intasbegindeclare @Year int;set @Year = dbo.GetYearOfJoining(@EmpID); print 'Joined' + cast (@Year as varchar);endexecute PrintEmployeeJoiningYear 101;
+create procedure PrintEmployeeJoiningYear
+@EmpID int
+as
+begin
+declare @Year int;
+set @Year = dbo.GetYearOfJoining(@EmpID); 
+print 'Joined' + cast (@Year as varchar);
+end
+
+execute PrintEmployeeJoiningYear 101;
